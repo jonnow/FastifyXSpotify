@@ -1,0 +1,17 @@
+
+<div class="sidebar">
+    <a href="/" class="btn btn-primary">Back to login</a>
+    <a href="https://ko-fi.com/jonnow0495" class="btn btn-primary">Buy me a coffee!☕</a>
+</div>
+<h2 class="welcomeMsg">Logged in as <span class="username">{{ display_name }}</span></h2>
+<div class="container">
+    <a href="/create-playlist" class="btn btn-primary">Create a new playlist</a>
+    <dl>
+        <dt>Email</dt><dd>{{email}}</dd>
+        <dt>ID</dt><dd>{{id}}</dd>
+        <dt>Spotify URI</dt><dd>{{uri}}</dd>
+        <dt>Link</dt><dd>{{href}}</dd>
+        <dt>Product type</dt><dd>{{product}}</dd>
+    </dl>
+    {{!-- <a href="/refresh" class="btn btn-secondary">Refresh login</a> --}}
+</div>

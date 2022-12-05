@@ -1,0 +1,38 @@
+
+<div class="sidebar">
+    <a href="/" class="btn btn-primary">Back to login</a>
+    <a href="http://github.com/jonnow/fastifyxspotify" class="btn btn-secondary">View on <br>GitHub <img src='public/images/octocat.png' width='30' class='icon' /></a>
+    <a href="https://ko-fi.com/jonnow0495" class="btn btn-primary">Buy me a coffee!☕</a>
+</div>
+<h2 class="welcomeMsg">Create playlist</h2>
+<div class="container">
+    <form method="POST" action="create-playlist">
+        <input type="hidden" name="user_id" value="{{user_id}}">
+        <label for="name">Playlist name</label>
+        <input required type="text" name="name" id="playlist_name">
+        <br>
+        <label for="description">Description</label>
+        <textarea required name="description" id="description" rows="2"></textarea>   
+        <br>
+        <label for="public">Public playlist</label>
+        <div>
+            <label for="public_true">Public</label>
+            <input type="radio" name="public" id="public_true" value="true">
+            <br>
+            <label for="public_false">Private</label>
+            <input type="radio" name="public" id="public_false" value="false">
+            <br>
+        </div>
+        <label for="public">Collaborative playlist</label>
+        <br>
+        <div>
+            <label for="collab_true">Yes</label>
+            <input required type="radio" name="collab" id="collab_true" value="true">
+            <br>
+            <label for="collab_false">No</label>
+            <input required type="radio" name="collab" id="collab_false" value="false">
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary">Create</button>
+    </form>
+</div>

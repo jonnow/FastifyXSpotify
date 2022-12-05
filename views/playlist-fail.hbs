@@ -1,0 +1,19 @@
+
+<div class="sidebar">
+    <a href="/" class="btn btn-primary">Back to login</a>
+    <a href="http://github.com/jonnow/fastifyxspotify">View on <br>GitHub <img src='public/images/octocat.png' width='30' class='icon' /></a>
+    <a href="https://ko-fi.com/jonnow0495" class="btn btn-primary">Buy me a coffee!☕</a>
+</div>
+<h2 class="welcomeMsg">Something went wrong</h2>
+<div class="container">
+    <p>Sorry, looks like something went wrong and the playlist was not created.</p>
+    <p>This is the error code and message we got back from Spotify:</p>
+    <dl>
+        <dt>Code:</dt>
+        <dd>{{error.status}}</dd>
+        <dt>Error message:</dt>
+        <dd>{{error.message}}</dd>
+    </dl>
+    <p>You can <a href='/log-error?errorCode={{error.status}}&errorMsg={{error.message}}'>log this error</a> and we will look into it</p>
+    <a href="/create-playlist" class="btn btn-primary">Try another?</a>
+</div>

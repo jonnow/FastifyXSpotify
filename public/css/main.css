@@ -1,0 +1,386 @@
+:root {
+    --main-bg-color: #231F20;
+    --dark-bg-color: #050404;
+    --logo-main-color: hsl(16, 89%, 54%);
+    --logo-main-color-darken: hsl(16, 109%, 34%);
+    --logo-span-color: #7DFFCF;
+    --text-main: #F2E6C2;
+    --spotify-green: hsl(140, 71%, 41%);
+    --spotify-green-darken: hsl(140, 71%, 26%) ;
+}
+
+body {
+    background-color: var(--main-bg-color);
+    color: #dfdfdf;
+    justify-content: center;
+    font-family: antarctican-mono, sans-serif;
+    padding: 2rem;
+    border-left: 10px solid var(--logo-main-color);
+    margin: 0;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+@media screen and (min-width: 468px) {
+    body{
+        font-size: 24px;
+    }
+}
+
+.grid-container {
+    width: 100%;
+    display: grid;
+    grid-template-areas: 'logo' 'pageHeading' 'content' 'sidebar';
+    row-gap: 2rem;
+}
+
+
+@media screen and (min-width: 768px) {
+    .grid-container {
+        grid-template-columns: 200px 1fr;
+        grid-template-rows: 100px 1fr;
+        grid-template-areas: 
+        'logo pageHeading'
+        'sidebar content';
+        gap: 1rem 1.6rem; /* row column */
+        
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .grid-container {
+        gap: 2rem 1.6rem; /* row column */
+    }
+}
+
+.container, .container-login {
+    background-color: var(--main-bg-color);
+    border-radius: 3px;
+    align-items: start;
+}
+
+.container, .container-login {
+    grid-area: content;
+}
+.container-login {
+    grid-area: content;
+    width: 60%;
+}
+
+@media screen and (min-width: 1024px) {
+    .container {
+        width: 50%;
+    }
+}
+
+.sidebar {
+    grid-area: sidebar;
+    align-items: start;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    border-top: 1px solid var(--logo-main-color);
+    padding-top: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+    .sidebar {
+        border-top: none;
+        padding: 2.4rem 1rem 0;
+    }
+
+    b.divider {
+        background-color: var(--logo-main-color);
+        display: block;
+        width: 1px;
+        height: 100%;
+        grid-column: 1;
+        grid-row-start: 1;
+        grid-row-end: 3;
+        justify-self: end;
+    }
+}
+
+.back {
+    display: block;
+    text-transform: uppercase;
+    margin-top: 1.5rem;
+    font-family: antarctican-mono, sans-serif;
+    text-decoration: none;
+}
+
+.back:hover {
+    text-decoration: underline;
+}
+
+
+
+h1.logo {
+    grid-area: logo;
+    display: block;
+    color: var(--logo-main-color);
+    font-family: antarctican-mono, sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    font-style: italic;
+    margin: 0;
+    transform: skew(-10deg, -10deg);
+}
+
+h1.logo span.prod {
+    display: block;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+h1.logo span.by {
+    font-size: .5em;
+    line-height: 50%;
+    text-align: center;
+    display: block;
+    color: var(--logo-span-color);
+}
+
+h2, dt {
+    color: var(--text-main);
+}
+
+h2 {
+    margin-top: 0;
+    font-size: 1.25rem;
+    
+}
+
+
+h2.welcomeMsg {
+    grid-area: pageHeading;
+    align-self: end;
+    margin-bottom: 0.25rem;
+    font-size: 1.75rem;
+    margin-top: 1rem;
+}
+
+h3 {
+    margin-top: 2rem;
+}
+
+p, li {
+    font-size: 1.1rem;
+}
+
+ul {
+    margin-top: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+    h2, h2.welcomeMsg {
+        font-size: 2rem;
+    }
+
+    h2.welcomeMsg {
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }
+}
+
+.container-login h2 {
+    font-size: 2rem;
+    text-transform: capitalize;
+}
+
+h2.welcomeMsg span.username {
+    display: block;
+    font-size: 2rem;
+    margin: .5rem 0 0 4.15rem;
+    color: var(--spotify-green);
+}
+
+dl {
+    font-size: 18px;
+    margin-bottom: 32px;
+}
+
+dt, dd {
+    display: block;
+}
+
+dt {
+    margin-bottom: 5px;
+    width: 150px;
+    font-weight: bold;
+}
+
+dd {
+    margin-bottom: 20px;
+}
+
+a {
+    color: var(--spotify-green);
+}
+.btn, input, label {
+    font-family: antarctican-mono, sans-serif;
+    font-size: 1rem;
+}
+
+
+/* *************************  
+***     Form styling     ***
+************************ **/
+form {
+    width: 100%;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type='text'], textarea {
+    display: block;
+    background-color: var(--main-bg-color);
+    color: var(--text-main);
+    width: 100%;
+    padding: 5px;
+    border: 2px solid var(--logo-main-color);
+    margin-top: 10px;
+}
+
+input[type='text'], textarea, form > div label {
+    font-size: 1rem;
+}
+
+form > div {
+    margin-bottom: 20px;
+    padding-top: 10px;
+
+}
+
+form > div > label {
+    font-weight: normal;
+    width: 100px;
+    text-align: right;
+    display: inline-block;
+    vertical-align: top;
+    height: 30px;
+    margin-bottom: 10px;
+}
+
+/* Radio buttons */
+input[type='radio'] {
+    position: relative;
+    appearance: none;
+}
+
+input[type='radio']:before, input[type='radio']:after {
+    content: '';
+    background-color: var(--main-bg-color);
+    border-radius: 50%;
+    transition: all .15s ease;
+    display: block;
+}
+
+input[type='radio']:before {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--logo-main-color);
+    padding: 2px;
+    cursor: pointer
+}
+
+input[type='radio']:hover:before {
+    border-color: var(--logo-main-color-darken);
+}
+
+input[type='radio']:after {
+    background-color: var(--main-bg-color);
+    display: block;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 18px;
+    height: 18px;
+}
+
+input[type='radio']:hover:before {
+    border-color: var(--logo-main-color-darken);
+}
+
+input[type='radio']:checked:after {
+    background-color: var(--logo-main-color);
+}
+
+
+@media screen and (min-width: 768px) {
+    input[type='text'], textarea, form > div label {
+        font-size: 1.25rem;
+    }
+
+    input[type='text'], textarea {
+        width: 400px;
+        padding: 6px 10px 10px;
+    }
+}
+
+
+/* *************************  
+***         Buttons      ***
+************************ **/
+.btn {
+    display: inline-block;
+    line-height: 135%;
+    padding: 7px 10px 10px;
+    border: 2px solid var(--logo-main-color);
+    background: none;
+    color: var(--logo-main-color);
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    transition: all .15s ease;
+    width: 100%;
+}
+
+.btn:hover {
+    background-color: var(--logo-main-color);
+    color: var(--text-main);
+    box-shadow: 5px 5px 0 0 var(--logo-main-color-darken);
+}
+
+.btn-primary {
+    border-color: var(--logo-span-color);
+    color: var(--logo-span-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--logo-span-color);
+    color: var(--main-bg-color);
+    box-shadow: 5px 5px 0px 0px teal;
+}
+
+.btn-spotify {
+    border-color: var(--spotify-green);
+    color: var(--spotify-green);
+}
+
+.btn-spotify:hover {
+    background-color: var(--spotify-green);
+    color: var(--main-bg-color);
+    box-shadow: 5px 5px 0px 0px var(--spotify-green-darken);
+}
+
+@media screen and (min-width: 1024px) {
+    .btn {
+        width: auto;
+    }
+}
+
+.sidebar .btn {
+    width: 80%;
+    margin-bottom: 1.5rem;
+}
+
+.icon {
+    vertical-align: bottom;
+    height: 25px;
+    width: auto;
+}
